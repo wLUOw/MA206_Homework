@@ -1,0 +1,81 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[UTF8]{ctex}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{MA206 Homework8}
+\author{12110120 赵钊}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{第3题}
+运用单纯形表法。
+
+\subsection{a}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+         & x & y & a & b & c &  &  \\ \hline
+        a & 8 & 6 & 1 & 0 & 0 & 48 & 48/6=8 \\ \hline
+        b & 4 & 1 & 0 & 1 & 0 & 20 & 20/1=20 \\ \hline
+        c & 0 & -1 & 0 & 0 & 1 & -5 & -5/-1=5 \\ \hline
+         & 10 & 35 & 0 & 0 & 0 & z=0 &  \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+         & x & y & a & b & c &  &  \\ \hline
+        a & $\frac{4}{3}$ & 0 & $\frac{1}{6}$ & 0 & 1 & 3 & 3/1=3 \\ \hline
+        b & 4 & 0 & 0 & 1 & 1 & 15 & 15/1=15 \\ \hline
+        y & 0 & 1 & 0 & 0 & -1 & -5 & -5/-1=5 \\ \hline
+         & 10 & 0 & 0 & 0 & 35 & z=-175 &  \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+         & x & y & a & b & c &  &  \\ \hline
+        c & $\frac{4}{3}$ & 0 & $\frac{1}{6}$ & 0 & 1 & 3 & / \\ \hline
+        b & $\frac{8}{3}$ & 0 & $-\frac{1}{6}$ & 1 & 0 & 12 & / \\ \hline
+        y & $\frac{4}{3}$ & 1 & $\frac{1}{6}$ & 0 & 0 & 8 & / \\ \hline
+         & $-\frac{110}{3}$ & 0 & $-\frac{35}{6}$ & 0 & 0 & z=280 &  \\ \hline
+    \end{tabular}
+\end{table}
+
+z的最大值为280，此时x=0，y=8
+
+
+\subsection{b}
+同(a)的方法，z最小值为14，此时x=0，y=2
+
+\newpage
+
+\section{第4题}
+
+\subsection{a}
+运用单纯形表法。2x+3y的最小值为6，此时x=0，y=2.最大值为21，此时x=6，y=3.
+
+\subsection{b}
+运用单纯形表法。6x+4y的最小值为0，此时x=0，y=0.最大值为144，此时x=24，y=0.
+
+
+\end{document}

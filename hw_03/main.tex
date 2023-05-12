@@ -1,0 +1,180 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[UTF8]{ctex}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{MA206 Homework3}
+\author{12110120 赵钊}
+
+\begin{document}
+\maketitle
+
+
+\section{概述}
+
+这是MA206 2023 Spring的第3次作业，共2题。
+
+第1题为利用动力系统计算总经济能否达到目标及达到目标的时间，解题步骤为列出递推式，通过递推式求解出通式，最后进行判断。
+
+第2题与第1题相似，列出递推式并进行求解。第2问通过计算总还款金额来判断重新融资是否合理。
+
+\section{第1题}
+
+\subsection{符号说明}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+    \hline
+    序号 & 符号 & 符号说明\\
+    \hline
+    1 & $a_n$ & 第$n$个月后需要还款的金额\\
+    \hline
+    2 & $r_m$ & 第$m$年增加的利息\\ 
+    \hline
+    3 & $l$ & 最优惠成交额\\ 
+    \hline
+    4 & $l_0$ & 定金\\ 
+    \hline
+\end{tabular}
+\caption{\label{demo-table}第1题符号说明}
+\end{center}
+\end{table}
+
+\subsection{递推式分析}
+根据题意，容易得知，在支付完定金之后，有关系式：
+\[a_n = a_0 - 500 + \frac{1}{12}r_m\]
+
+其中
+\[a_0 = l - l_0\]
+
+\subsection{问题求解}
+以列表中的第1个Ford Fiesta为例，在第1个月支付完定金500\$后，
+\[a_0 = 14200 - 500 = 13700\]
+\[r_1 = a_0 \times 4.5\% = 616.5\]
+
+因此第1年过后，
+\[a_12 = a_0 - 6000 + r_1 = 8316.5\]
+\[r_2 = a_12 \times 4.5\% = 374.2425\]
+
+第2年过后，
+\[a_24 = a_12 - 6000 + r_2 = 2690.7425\]
+\[r_2 = a_24 \times 4.5\% = 121.01\]
+
+发现
+\[a_36 = a_24 - 6000 + r_3 < 0\]
+
+得出结论在付清定金的第3年内，可以买到Ford Fiesta
+
+同样的方式对其他7个公司提供的方案进行求解，得到结果如下
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    名称 & 能否购买\\
+    \hline
+    Ford Focus & 能 \\
+    \hline
+    Chevy Volt & 否 \\ 
+    \hline
+    Chevy Cruz & 能 \\ 
+    \hline
+    Toyota Camry & 能 \\ 
+    \hline
+    Toyota Camry Hybrid & 能\\ 
+    \hline
+    Toyota Corolla & 能 \\ 
+    \hline
+    Toyota Prius & 能 \\ 
+    \hline
+\end{tabular}
+\caption{\label{demo-table}第1题结论}
+\end{center}
+\end{table}
+
+\subsection{结论}
+按照题目条件给定的策略进行购买，可以买到Ford Fiesta、Ford Focus、Chevy Cruz、Toyota Camry、Toyota Camry Hybrid、Toyota Corolla和Toyota Prius，即除去Chevy Volt均可以购买。
+
+
+\section{第2题}
+
+\subsection{符号说明}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+    \hline
+    序号 & 符号 & 符号说明\\
+    \hline
+    1 & $a_n$ & 第$n$个月后需要还款的金额\\
+    \hline
+    2 & $r$ & 月利率\\ 
+    \hline
+    3 & $p$ & 月还款额\\  
+    \hline
+\end{tabular}
+\caption{\label{demo-table}第2题符号说明}
+\end{center}
+\end{table}
+
+\subsection{第1问}
+由题目可知：
+\[a_0 = 250000, r = 0.4\%\]
+
+根据等量关系列出递推式：
+\[a_n = (1+r)a_{n-1} - p\]
+
+进行恒等变换有：
+\[a_n - \frac{p}{r} = (1+r)a_{n-1} - p - \frac{p}{r}\]
+\[a_n - \frac{p}{r} = (1+r)(a_{n-1} - \frac{p}{r})\]
+
+由递推式可以得到：
+\[a_n = (1+r)^n(a_0 - \frac{p}{r}) + \frac{p}{r}\]
+
+带入$a_{360} = 0$、$a_0 = 250000$和$r=0.4\%$解得：
+\[p=1311.66\]
+
+结论：每月还款数额$p=1311.66\$$
+
+
+\subsection{第2问}
+\[a_{96} = (1+r)^{96}(a_0-\frac{p_0}{r}) + \frac{p_0}{r}\]
+
+其中
+\[a_0 = 250000, r = 0.4\%, p_0 = 1311.66\]
+
+得到
+\[a_{96} = 213614\]
+
+同样地，将$b_0=213614$、$b_{20}=0$、$r_1=4\%$代入如下表达式
+\[b_n=(1+r_1)^n(b_0-\frac{p_1}{r_1})+\frac{p_1}{r_1}\]
+
+解得
+\[p_1=15718.2\]
+
+因此改为20年期贷款的月付额为$\frac{1}{12}p_1=1309.85\$$
+
+同法可计算出，15年期贷款的月付额为1578.37\$
+
+原总支付额为$s_0 = 1311.66 \times 360 = 472198\$$
+
+20年期贷款总支付额为$s_1 = 1311.66 \times 96 + 1309.85 \times 240 + 2500 = 442783\$$
+
+15年期贷款总支付额为$s_2 = 1311.66 \times 96 + 1578.37 \times 180 + 2500 = 412526\$$
+
+发现$s_2 < s_1 < s_0$
+
+因此应该选择进行融资，如果经济可以承担15年期贷款的月付额，应优先选择15年期贷款.
+
+
+\end{document}
