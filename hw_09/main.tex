@@ -1,0 +1,64 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[UTF8]{ctex}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{MA206 Homework9}
+\author{12110120 赵钊}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{第1题}
+根据万有引力公式
+\[\frac{Gm}{r^2} = \omega^2 r\]
+以及
+\[\omega = \frac{2\pi}{t}\]
+可以解出
+\[t = \frac{2\pi}{\sqrt{G}} m^{-\frac{1}{2}} r^\frac{3}{2}\]
+因此可以得到$a = -\frac{1}{2}$、$b = \frac{3}{2}$和$c = -\frac{1}{2}$
+
+\section{第2题}
+$\theta$和$sin\theta$的量纲为1，$g$是加速度的量纲，为$LT^{-2}$ \\
+因此，等式右边的量纲为
+\[\left[ ML^2\left(T^{-2}\right)MLT^{-2}L \right] T^{-1} = M^2L^4T^{-5}\]
+而能量$E$的量纲为$ML^2T^{-2}$，因此量纲不匹配，该公式不能成立。
+
+\section{第3题}
+计算等式右端用到的量纲如下表：
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+        物理量 & 量纲 \\ \hline
+        $\rho$ & $ML^{-3}$ \\ \hline
+        $v$ & $LT^{-1}$ \\ \hline
+        $r$ & $L$ \\ \hline
+        $\delta$ & $L$ \\ \hline
+        $\theta$ & 1 \\ \hline
+        $\mu$ & $ML^{-1}T^{-1}$ \\ \hline
+        $s$ & $LT^{-1}$ \\ \hline
+        $g$ & $LT^{-2}$ \\ \hline
+    \end{tabular}
+\end{table}
+
+\newpage
+
+等式右边的量纲为
+\[ML^{-3}(LT^{-1})^2L^2h(1,1,1,1,1) = MLT^{-2}\]
+
+而$F$的量纲也为$MLT^{-2}$，因此要证等式在量纲上成立。
+
+\end{document}
